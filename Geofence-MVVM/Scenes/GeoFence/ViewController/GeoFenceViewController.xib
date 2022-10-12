@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeoFenceViewController" customModule="Geofence_MVVM" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="td1-bd-mj6" id="90o-ch-S7L"/>
+                <outlet property="regionStatusLabel" destination="ZbZ-m6-YyR" id="l4D-BE-p45"/>
+                <outlet property="toolBar" destination="UL3-mM-a5j" id="paW-QT-ixE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3e6-d7-r3g">
+                    <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-qp-V33">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geo fence detection..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbZ-m6-YyR">
+                                    <rect key="frame" x="114.00000000000001" y="16" width="162.33333333333337" height="18"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="ZbZ-m6-YyR" firstAttribute="centerY" secondItem="c2u-qp-V33" secondAttribute="centerY" id="ZN5-hW-9Su"/>
+                                <constraint firstItem="ZbZ-m6-YyR" firstAttribute="centerX" secondItem="c2u-qp-V33" secondAttribute="centerX" id="k3I-zr-EL9"/>
+                                <constraint firstAttribute="height" constant="50" id="xP5-nL-FL7"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8v-Nl-3PU">
+                            <rect key="frame" x="0.0" y="50" width="390" height="716"/>
+                            <subviews>
+                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="td1-bd-mj6">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="716"/>
+                                </mapView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="td1-bd-mj6" firstAttribute="top" secondItem="E8v-Nl-3PU" secondAttribute="top" id="3Mi-j4-bxC"/>
+                                <constraint firstAttribute="bottom" secondItem="td1-bd-mj6" secondAttribute="bottom" id="Pp3-yv-LZm"/>
+                                <constraint firstAttribute="trailing" secondItem="td1-bd-mj6" secondAttribute="trailing" id="ge0-Bb-mIn"/>
+                                <constraint firstItem="td1-bd-mj6" firstAttribute="leading" secondItem="E8v-Nl-3PU" secondAttribute="leading" id="nDX-mZ-SC3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UL3-mM-a5j">
+                    <rect key="frame" x="0.0" y="760" width="390" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="3if-Dj-xfz"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Item" id="ueR-Rg-kUh"/>
+                    </items>
+                </toolbar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="3e6-d7-r3g" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4w4-Vd-SmF"/>
+                <constraint firstItem="UL3-mM-a5j" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BKx-rH-7gV"/>
+                <constraint firstItem="3e6-d7-r3g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Y4a-qZ-Yo1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UL3-mM-a5j" secondAttribute="bottom" id="gFm-cB-kUJ"/>
+                <constraint firstItem="3e6-d7-r3g" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="kFg-vN-gsU"/>
+                <constraint firstItem="3e6-d7-r3g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pDH-H1-Ric"/>
+                <constraint firstItem="UL3-mM-a5j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zlP-vb-lkK"/>
+            </constraints>
+            <point key="canvasLocation" x="61.538461538461533" y="20.616113744075829"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

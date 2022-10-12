@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WifiListViewController" customModule="Geofence_MVVM" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="RwU-xH-jPy" id="1Wk-Pj-7KI"/>
+                <outlet property="disconectButton" destination="FW0-6J-wh0" id="tNn-vs-9zZ"/>
+                <outlet property="nodataView" destination="lQa-PX-HHD" id="5iX-uR-3sV"/>
+                <outlet property="tableView" destination="SjS-Rt-D1P" id="GWf-sJ-yly"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwU-xH-jPy">
+                    <rect key="frame" x="0.0" y="557" width="390" height="253"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gk7-cG-n8v">
+                            <rect key="frame" x="0.0" y="8" width="390" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="407-dF-hyI">
+                                    <rect key="frame" x="354" y="12" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="u82-6p-pKQ"/>
+                                    </constraints>
+                                    <state key="normal" image="xmark" catalog="system"/>
+                                    <connections>
+                                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="MpX-bn-krT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW0-6J-wh0">
+                                    <rect key="frame" x="16" y="8" width="78" height="28"/>
+                                    <state key="normal" title="Disconnect"/>
+                                    <connections>
+                                        <action selector="disconectAction:" destination="-1" eventType="touchUpInside" id="dw7-z9-t1w"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="407-dF-hyI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FW0-6J-wh0" secondAttribute="trailing" constant="8" symbolic="YES" id="63P-X8-66z"/>
+                                <constraint firstAttribute="trailing" secondItem="407-dF-hyI" secondAttribute="trailing" constant="16" id="6Zj-DE-SOX"/>
+                                <constraint firstItem="FW0-6J-wh0" firstAttribute="top" secondItem="gk7-cG-n8v" secondAttribute="top" constant="8" id="Ete-3V-ftE"/>
+                                <constraint firstItem="FW0-6J-wh0" firstAttribute="leading" secondItem="gk7-cG-n8v" secondAttribute="leading" constant="16" id="MCu-kH-npw"/>
+                                <constraint firstAttribute="bottom" secondItem="407-dF-hyI" secondAttribute="bottom" constant="12" id="TD5-Fl-xQz"/>
+                                <constraint firstAttribute="bottom" secondItem="FW0-6J-wh0" secondAttribute="bottom" constant="8" id="egP-qd-gWa"/>
+                                <constraint firstAttribute="height" constant="44" id="qDy-Dw-hrk"/>
+                                <constraint firstItem="407-dF-hyI" firstAttribute="top" secondItem="gk7-cG-n8v" secondAttribute="top" constant="12" id="qIk-hJ-C06"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-9i-Xrh">
+                            <rect key="frame" x="0.0" y="52" width="390" height="1"/>
+                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="6at-gh-3lu"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="guk-ur-zIF">
+                            <rect key="frame" x="0.0" y="53" width="390" height="200"/>
+                            <subviews>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQa-PX-HHD">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="149"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi.slash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tuT-Qt-VE0">
+                                            <rect key="frame" x="151" y="29.999999999999964" width="88" height="47.666666666666671"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="88" id="P1h-q2-OOZ"/>
+                                                <constraint firstAttribute="height" constant="50" id="cn3-oX-RMO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No wifi found, Please create new region and netwok" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1z-wj-gBT">
+                                            <rect key="frame" x="49" y="89.666666666666629" width="292.33333333333331" height="37.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="149" id="7ck-Hy-9Gk"/>
+                                        <constraint firstItem="Y1z-wj-gBT" firstAttribute="top" secondItem="tuT-Qt-VE0" secondAttribute="bottom" constant="10" id="R0o-bn-Qc5"/>
+                                        <constraint firstItem="tuT-Qt-VE0" firstAttribute="centerX" secondItem="lQa-PX-HHD" secondAttribute="centerX" id="l1m-RI-rYB"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y1z-wj-gBT" secondAttribute="bottom" constant="22" id="nJS-89-daL"/>
+                                        <constraint firstItem="Y1z-wj-gBT" firstAttribute="centerX" secondItem="tuT-Qt-VE0" secondAttribute="centerX" id="ufR-4h-Sw6"/>
+                                        <constraint firstItem="tuT-Qt-VE0" firstAttribute="centerY" secondItem="lQa-PX-HHD" secondAttribute="centerY" constant="-20" id="vcA-tV-Zos"/>
+                                    </constraints>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SjS-Rt-D1P">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="aiG-9u-Cq3"/>
+                                    </constraints>
+                                </tableView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="guk-ur-zIF" firstAttribute="top" secondItem="8LS-9i-Xrh" secondAttribute="bottom" id="1nN-tx-0ZA"/>
+                        <constraint firstItem="gk7-cG-n8v" firstAttribute="top" secondItem="RwU-xH-jPy" secondAttribute="top" constant="8" id="5GF-GA-ejQ"/>
+                        <constraint firstItem="guk-ur-zIF" firstAttribute="leading" secondItem="RwU-xH-jPy" secondAttribute="leading" id="AaK-fp-Dwb"/>
+                        <constraint firstAttribute="trailing" secondItem="gk7-cG-n8v" secondAttribute="trailing" id="Ahk-bD-J5z"/>
+                        <constraint firstItem="8LS-9i-Xrh" firstAttribute="top" secondItem="gk7-cG-n8v" secondAttribute="bottom" id="DsP-0v-1Ar"/>
+                        <constraint firstAttribute="bottom" secondItem="guk-ur-zIF" secondAttribute="bottom" id="Dvv-4S-6LY"/>
+                        <constraint firstAttribute="height" constant="253" id="OG1-LG-Ru9"/>
+                        <constraint firstItem="gk7-cG-n8v" firstAttribute="leading" secondItem="RwU-xH-jPy" secondAttribute="leading" id="lic-Gw-lO5"/>
+                        <constraint firstItem="8LS-9i-Xrh" firstAttribute="leading" secondItem="RwU-xH-jPy" secondAttribute="leading" id="lpb-FS-Hbd"/>
+                        <constraint firstAttribute="trailing" secondItem="guk-ur-zIF" secondAttribute="trailing" id="rSI-cV-ZdY"/>
+                        <constraint firstAttribute="trailing" secondItem="8LS-9i-Xrh" secondAttribute="trailing" id="sdk-e4-fDw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RwU-xH-jPy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nCZ-Gc-mZM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RwU-xH-jPy" secondAttribute="bottom" id="njK-3D-B4p"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RwU-xH-jPy" secondAttribute="trailing" id="onb-Y6-Qoj"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="wifi.slash" catalog="system" width="128" height="101"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
